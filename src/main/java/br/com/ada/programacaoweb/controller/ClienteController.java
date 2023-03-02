@@ -1,20 +1,42 @@
 package br.com.ada.programacaoweb.controller;
 
 import br.com.ada.programacaoweb.model.Cliente;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import br.com.ada.programacaoweb.repository.ClienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import java.time.Instant;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/clientes")
 public class ClienteController {
 
-    @GetMapping
-    public Cliente getInformacao(){
+    @Autowired
+    private ClienteRepository clienteRepository;
 
-        Cliente cliente = new Cliente(1L, "Cliente", "85-9999-9999", "cliente@gmail.com", Instant.now());
-        return cliente;
+    @GetMapping
+    public List<Cliente> listarTodos(){
+        return clienteRepository.findAll();
+    }
+
+    @PostMapping
+    public void incluir(@RequestBody Cliente cliente){
+        clienteRepository.save(cliente);
+    }
+
+    @PutMapping
+    public void alterar(@RequestBody Cliente cliente){
+        clienteRepository.save(cliente);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleltarPorId(@PathVariable Long id){
+        clienteRepository.deleteById(id);
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Cliente> listarCliete(@PathVariable Long id){
+        return clienteRepository.findById(id);
     }
 }
