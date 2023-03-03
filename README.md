@@ -9,6 +9,8 @@ Sistema de controle de cliente simples. Nele foi criado uma API Rest em Java que
 3- IDE Intellij ou Eclipse
 4- MySQL
 5- Postman
+6- Spring Boot
+7- JSF
 
 - Consulta no Banco H2
 <img width="761" alt="image" src="https://user-images.githubusercontent.com/84106538/222539831-b917db35-b595-4255-9b00-493320f95c1f.png">
