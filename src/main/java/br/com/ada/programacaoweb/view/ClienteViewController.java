@@ -54,7 +54,7 @@ public class ClienteViewController {
     @PostMapping("/excluir/{id}")
     public String deleteCliente(@PathVariable("id") String id){
         clienteController.delete(id);
-        return "redirect:/inicio";
+        return "redirect:/clientes";
     }
 
     @PostMapping("/cliente-add")

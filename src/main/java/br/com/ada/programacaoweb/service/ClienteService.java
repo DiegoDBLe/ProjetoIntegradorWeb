@@ -43,7 +43,7 @@ public class ClienteService {
 
     public  Cliente delete(String id){
         Cliente cliente = clienteRepository.findById(id).orElseThrow(() -> new IllegalArgumentException());
-        clienteRepository.save(cliente);
+        clienteRepository.delete(cliente);
         return cliente;
     }
 }
