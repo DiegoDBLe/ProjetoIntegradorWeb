@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+</head>
+<body>
+<form action="#" th:action="@{/excluir/{id}(id=${cliente.id})}" th:object="${cliente}" method = "POST">
+    Nome: <span th:text="${cliente.nome}"></span>
+    <br />
+    Telefone: <span th:text="${cliente.telefone}"></span>
+    <br />
+    Email: <span th:text="${cliente.email}"></span>
+    <br />
+
+    <input type="submit" name="save" value="Excluir cliente" />
+</form>
+</body>
+</html>

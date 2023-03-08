@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+</head>
+<body>
+<form action="#" th:action="@{/cliente-save/{id}(id=${cliente.id})}" th:object="${cliente}" method = "POST">
+    Nome: <input type="text" th:field="*{nome}" name = "name">
+    <br />
+    Telefone: <input type="text" th:field="*{telefone}" name = "telefone" />
+    <br />
+    Email: <input type="text" th:field="*{email}" name = "email" />
+    <br />
+
+    <input type="submit" name="save" value="Atualizar cliente" />
+</form>
+</body>
+</html>

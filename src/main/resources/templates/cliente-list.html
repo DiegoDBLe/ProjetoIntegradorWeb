@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+    <link href="style.css">
+</head>
+<body>
+<div th:switch="${#lists.size(clientes)}">
+    <h2 th:case="0">Não existem clientes registrados!</h2>
+    <div th:case="*">
+        <h2>Clientes</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="cliente : ${clientes}">
+                <td th:text="${cliente.nome}"></td>
+                <td th:text="${cliente.telefone}"></td>
+                <td th:text="${cliente.email}"></td>
+                <td>
+                    <a th:href="@{/cliente-edit/{id}(id=${cliente.id})}">Editar</a>
+                    <a th:href="@{/cliente-delete/{id}(id=${cliente.id})}">Excluir</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/cliente-new">Adicionar um novo Cliente</a></p>
+</div>
+</body>
+</html>

@@ -22,7 +22,7 @@ public class CarregaData {
     public void loadData(){
         if(podeCarregarDados){
             for (int x = 0; x < 50; x++){
-                clienteRepository.save(new Cliente((long) x,"Jose da Silva" + x, "99662-554" + x, "jose@feltex.com.br", Instant.now()));
+                clienteRepository.save(new Cliente("1","Jose da Silva" + x, "99662-554" + x, "jose@feltex.com.br", Instant.now()));
             }
         }
     }
