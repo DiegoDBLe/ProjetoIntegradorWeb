@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Clientes</title>
+
+    <style>
+        body {
+            background-color: #019875;
+        }
+    </style>
 </head>
 <body>
 <form action="#" th:action="@{/cliente-save/{id}(id=${cliente.id})}" th:object="${cliente}" method = "POST">

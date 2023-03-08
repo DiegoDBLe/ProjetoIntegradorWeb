@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Clientes</title>
+
+    <style>
+        body {
+            background-color: #019875;
+        }
+    </style>
 </head>
 <body>
 <form action="#" th:action="@{/excluir/{id}(id=${cliente.id})}" th:object="${cliente}" method = "POST">
@@ -14,6 +20,8 @@
     <br />
 
     <input type="submit" name="save" value="Excluir cliente" />
+
+    <p><a href="/cliente">Sair</a></p>
 </form>
 </body>
 </html>
