@@ -9,17 +9,26 @@
             background-color: #019875;
         }
     </style>
+    <h3>Digite o seu e-mail abaixo e garanta vaga no Projeto Nômade Digital que te mostrarar como é possivel
+    viver através da internet</h3>
 </head>
 <body>
-<form action="#" th:action="@{/cliente-add}" th:object="${cliente}" method = "POST">
-    Nome: <input type="text" th:field="*{nome}" name = "name">
-    <br />
-    Telefone: <input type="text" th:field="*{telefone}" name = "telefone" />
-    <br />
-    Email: <input type="text" th:field="*{email}" name = "email" />
-    <br />
 
-    <input type="submit" name="save" value="Criar cliente" />
+<form action="#" th:action="@{/cliente-add}" th:object="${cliente}" method = "POST">
+    <div class="mb-1">
+    Seu nome completo: <input type="text" th:field="*{nome}" name = "name">
+    </div>
+
+    <div class="mb-2">
+    Seu Whatsapp: <input type="text" th:field="*{telefone}" name = "telefone" />
+    </div>
+
+    <div class="mb-3">
+    Seu email: <input type="text" th:field="*{email}" name = "email" />
+    </div>
+
+    <input type="submit" name="save" value="Confirmar Cadastro" />
+
 </form>
 </body>
 </html>
